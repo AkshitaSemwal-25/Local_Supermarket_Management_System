@@ -50,7 +50,7 @@ namespace Local_Supermarket_Management_System
                                 MessageBox.Show("Login successful", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
 
-                                Home home = new Home();
+                                Mainform home = new Mainform();
                                 home.Show();
                             }
                         }
