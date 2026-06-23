@@ -24,36 +24,32 @@ namespace Local_Supermarket_Management_System
 
         }
 
-        public void LoadProducts()
+        private void LoadProducts()
         {
-            flowHome.Controls.Clear();
-
-            string connString = "Server=localhost;Database=LocalSupermarkets;Trusted_Connection=True;TrustServerCertificate=True;";
-
-            using(SqlConnection conn = new SqlConnection(connString))
+            using (var context = new LocalSupermarketsEntities())
             {
-                conn.Open();
+                var products = context.Products.ToList();
 
-                string query = "SELECT Id, Title, Category, Barcode, Price, Quantity, Status FROM PRODUCTS";
-
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                foreach (var product in products)
                 {
-                    using(SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            ProductCard card = new ProductCard();
-                            card.ProductId = Convert.ToInt32(reader["Id"]);
-                            card.Product = reader["Title"].ToString();
-                            card.Category = reader["Category"].ToString();
-                            card.Barcode = reader["Barcode"].ToString();
-                            card.Price = reader["Price"].ToString();
-                            card.Stock = reader["Stock"].ToString();
-                            card.Status = reader["Status"].ToString();
+                    ProductCard card = new ProductCard();
 
-                            flowHome.Controls.Add(card);
-                        }
-                    }
+                    card.lblProduct.Text = product.ProductName;
+
+                    card.lblCategory.Text = product.Category.CategoryName;
+
+                    card.lblBarcode.Text = product.Barcode;
+
+                    card.lblPrice.Text = "£" + product.Price.ToString();
+
+                    card.lblQuantity.Text = product.Quantity.ToString();
+
+                    card.lblStatus.Text =
+                        product.Quantity < 5
+                        ? "Low Stock"
+                        : "In Stock";
+
+                    flowHome.Controls.Add(card);
                 }
             }
         }

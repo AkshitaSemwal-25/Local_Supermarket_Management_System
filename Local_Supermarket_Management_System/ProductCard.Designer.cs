@@ -38,7 +38,7 @@
             this.lblCategory = new System.Windows.Forms.Label();
             this.lblBarcode = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
-            this.lblStock = new System.Windows.Forms.Label();
+            this.lblQuantity = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -128,11 +128,11 @@
             this.label5.BackColor = System.Drawing.Color.Pink;
             this.label5.Font = new System.Drawing.Font("Mongolian Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label5.Location = new System.Drawing.Point(51, 16);
+            this.label5.Location = new System.Drawing.Point(27, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 21);
+            this.label5.Size = new System.Drawing.Size(96, 21);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Stock:";
+            this.label5.Text = "Quantity:";
             // 
             // label6
             // 
@@ -196,18 +196,18 @@
             this.lblPrice.TabIndex = 9;
             this.lblPrice.Text = "label10";
             // 
-            // lblStock
+            // lblQuantity
             // 
-            this.lblStock.AutoSize = true;
-            this.lblStock.BackColor = System.Drawing.Color.Pink;
-            this.lblStock.Font = new System.Drawing.Font("Mongolian Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStock.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.lblStock.Location = new System.Drawing.Point(30, 16);
-            this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(77, 21);
-            this.lblStock.TabIndex = 10;
-            this.lblStock.Text = "label11";
-            this.lblStock.Click += new System.EventHandler(this.lblStock_Click);
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.BackColor = System.Drawing.Color.Pink;
+            this.lblQuantity.Font = new System.Drawing.Font("Mongolian Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantity.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblQuantity.Location = new System.Drawing.Point(30, 16);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(77, 21);
+            this.lblQuantity.TabIndex = 10;
+            this.lblQuantity.Text = "label11";
+            this.lblQuantity.Click += new System.EventHandler(this.lblStock_Click);
             // 
             // lblStatus
             // 
@@ -282,6 +282,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(137, 55);
             this.panel7.TabIndex = 14;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // panel8
             // 
@@ -304,7 +305,7 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.SystemColors.Info;
-            this.panel10.Controls.Add(this.lblStock);
+            this.panel10.Controls.Add(this.lblQuantity);
             this.panel10.Location = new System.Drawing.Point(175, 273);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(137, 55);
@@ -366,7 +367,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Pink;
+            this.BackColor = System.Drawing.Color.LavenderBlush;
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel11);
@@ -412,18 +413,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblProduct;
-        private System.Windows.Forms.Label lblCategory;
-        private System.Windows.Forms.Label lblBarcode;
-        private System.Windows.Forms.Label lblPrice;
-        private System.Windows.Forms.Label lblStock;
-        private System.Windows.Forms.Label lblStatus;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Label lblProduct;
+        public System.Windows.Forms.Label lblCategory;
+        public System.Windows.Forms.Label lblBarcode;
+        public System.Windows.Forms.Label lblPrice;
+        public System.Windows.Forms.Label lblQuantity;
+        public System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;

@@ -48,10 +48,9 @@ namespace Local_Supermarket_Management_System
                             if (count > 0)
                             {
                                 MessageBox.Show("Login successful", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Close();
-
-                                Mainform home = new Mainform();
+                                Mainfrom home = new Mainfrom();
                                 home.Show();
+                                this.Close();                     
                             }
                         }
                     }

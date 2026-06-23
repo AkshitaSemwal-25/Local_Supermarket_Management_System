@@ -26,5 +26,33 @@ namespace Local_Supermarket_Management_System
         {
 
         }
+
+        public void LoadControl(UserControl uc)
+        {
+            panelContainer.Controls.Clear();
+            uc.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(uc);
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            panelContainer.Controls.Clear();
+            Home home = new Home();
+            LoadControl(home);
+        }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            panelContainer.Controls.Clear();
+            Items item = new Items();
+            LoadControl(item);
+        }
+
+        private void Mainfrom_Load(object sender, EventArgs e)
+        {
+            panelContainer.Controls.Clear();
+            Items item = new Items();
+            LoadControl(item);
+        }
     }
 }

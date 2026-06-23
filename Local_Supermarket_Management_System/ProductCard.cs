@@ -90,14 +90,19 @@ namespace Local_Supermarket_Management_System
 
         public string Stock
         {
-            get { return lblStock.Text; }
-            set { lblStock.Text = value; }
+            get { return lblQuantity.Text; }
+            set { lblQuantity.Text = value; }
         }
 
         public string Status
         {
             get { return lblStatus.Text; }
             set { lblStatus.Text = value; }
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

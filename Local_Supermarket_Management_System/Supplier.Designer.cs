@@ -1,6 +1,8 @@
-﻿namespace Local_Supermarket_Management_System
+﻿using System.Windows.Forms;
+
+namespace Local_Supermarket_Management_System
 {
-    partial class Supplier
+    partial class Supplier : Form
     {
         /// <summary> 
         /// Required designer variable.
