@@ -54,5 +54,26 @@ namespace Local_Supermarket_Management_System
             Items item = new Items();
             LoadControl(item);
         }
+
+        private void btnSuppliers_Click(object sender, EventArgs e)
+        {
+            panelContainer.Controls.Clear();
+             Suppliers supplier = new Suppliers();
+            LoadControl(supplier);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            panelContainer.Controls.Clear();
+            Search search = new Search();
+            LoadControl(search);
+        }
+
+        private void btnStock_Click(object sender, EventArgs e)
+        {
+            panelContainer.Controls.Clear();
+            Stock stock = new Stock();
+            LoadControl(stock);
+        }
     }
 }

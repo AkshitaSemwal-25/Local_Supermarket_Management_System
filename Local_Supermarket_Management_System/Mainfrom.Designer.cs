@@ -37,12 +37,14 @@
             this.btnProducts = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LavenderBlush;
+            this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnReport);
             this.panel1.Controls.Add(this.btnSales);
@@ -103,6 +105,7 @@
             this.btnStock.TabIndex = 3;
             this.btnStock.Text = "STOCK";
             this.btnStock.UseVisualStyleBackColor = false;
+            this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
             // 
             // btnSuppliers
             // 
@@ -115,6 +118,7 @@
             this.btnSuppliers.TabIndex = 2;
             this.btnSuppliers.Text = "SUPPLIERS";
             this.btnSuppliers.UseVisualStyleBackColor = false;
+            this.btnSuppliers.Click += new System.EventHandler(this.btnSuppliers_Click);
             // 
             // btnProducts
             // 
@@ -149,6 +153,19 @@
             this.panelContainer.Size = new System.Drawing.Size(834, 680);
             this.panelContainer.TabIndex = 1;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.SystemColors.Info;
+            this.btnSearch.Font = new System.Drawing.Font("Modern No. 20", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.DeepPink;
+            this.btnSearch.Location = new System.Drawing.Point(44, 491);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(244, 71);
+            this.btnSearch.TabIndex = 7;
+            this.btnSearch.Text = "SEARCH";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // Mainfrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -175,5 +192,6 @@
         private System.Windows.Forms.Button btnProducts;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Panel panelContainer;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
