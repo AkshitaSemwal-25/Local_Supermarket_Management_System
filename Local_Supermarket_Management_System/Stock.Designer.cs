@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.cmbProduct = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.nudQuantity = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtCurrentStock = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtCurrentStock = new System.Windows.Forms.TextBox();
-            this.nudQuantity = new System.Windows.Forms.NumericUpDown();
             this.dtpRestockDate = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.dgvRestock = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRestock)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +60,15 @@
             this.panel1.Size = new System.Drawing.Size(398, 82);
             this.panel1.TabIndex = 1;
             // 
+            // cmbProduct
+            // 
+            this.cmbProduct.FormattingEnabled = true;
+            this.cmbProduct.Location = new System.Drawing.Point(177, 25);
+            this.cmbProduct.Name = "cmbProduct";
+            this.cmbProduct.Size = new System.Drawing.Size(188, 28);
+            this.cmbProduct.TabIndex = 2;
+            this.cmbProduct.SelectedIndexChanged += new System.EventHandler(this.cmbProduct_SelectedIndexChanged);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -71,15 +80,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Product:";
             // 
-            // cmbProduct
-            // 
-            this.cmbProduct.FormattingEnabled = true;
-            this.cmbProduct.Location = new System.Drawing.Point(177, 25);
-            this.cmbProduct.Name = "cmbProduct";
-            this.cmbProduct.Size = new System.Drawing.Size(188, 28);
-            this.cmbProduct.TabIndex = 2;
-            this.cmbProduct.SelectedIndexChanged += new System.EventHandler(this.cmbProduct_SelectedIndexChanged);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Info;
@@ -89,6 +89,13 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(385, 82);
             this.panel2.TabIndex = 2;
+            // 
+            // nudQuantity
+            // 
+            this.nudQuantity.Location = new System.Drawing.Point(215, 24);
+            this.nudQuantity.Name = "nudQuantity";
+            this.nudQuantity.Size = new System.Drawing.Size(126, 26);
+            this.nudQuantity.TabIndex = 3;
             // 
             // label2
             // 
@@ -111,6 +118,13 @@
             this.panel3.Size = new System.Drawing.Size(398, 82);
             this.panel3.TabIndex = 3;
             // 
+            // txtCurrentStock
+            // 
+            this.txtCurrentStock.Location = new System.Drawing.Point(205, 22);
+            this.txtCurrentStock.Name = "txtCurrentStock";
+            this.txtCurrentStock.Size = new System.Drawing.Size(160, 26);
+            this.txtCurrentStock.TabIndex = 2;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -132,6 +146,13 @@
             this.panel4.Size = new System.Drawing.Size(385, 82);
             this.panel4.TabIndex = 4;
             // 
+            // dtpRestockDate
+            // 
+            this.dtpRestockDate.Location = new System.Drawing.Point(189, 20);
+            this.dtpRestockDate.Name = "dtpRestockDate";
+            this.dtpRestockDate.Size = new System.Drawing.Size(183, 26);
+            this.dtpRestockDate.TabIndex = 2;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -144,30 +165,9 @@
             this.label4.Text = "Restock  Date:";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // txtCurrentStock
-            // 
-            this.txtCurrentStock.Location = new System.Drawing.Point(205, 22);
-            this.txtCurrentStock.Name = "txtCurrentStock";
-            this.txtCurrentStock.Size = new System.Drawing.Size(160, 26);
-            this.txtCurrentStock.TabIndex = 2;
-            // 
-            // nudQuantity
-            // 
-            this.nudQuantity.Location = new System.Drawing.Point(215, 24);
-            this.nudQuantity.Name = "nudQuantity";
-            this.nudQuantity.Size = new System.Drawing.Size(126, 26);
-            this.nudQuantity.TabIndex = 3;
-            // 
-            // dtpRestockDate
-            // 
-            this.dtpRestockDate.Location = new System.Drawing.Point(189, 20);
-            this.dtpRestockDate.Name = "dtpRestockDate";
-            this.dtpRestockDate.Size = new System.Drawing.Size(183, 26);
-            this.dtpRestockDate.TabIndex = 2;
-            // 
             // btnUpdate
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnUpdate.BackColor = System.Drawing.Color.LawnGreen;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Location = new System.Drawing.Point(288, 209);
             this.btnUpdate.Name = "btnUpdate";
@@ -206,11 +206,11 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRestock)).EndInit();
             this.ResumeLayout(false);
 

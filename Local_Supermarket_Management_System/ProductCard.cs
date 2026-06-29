@@ -72,20 +72,20 @@ namespace Local_Supermarket_Management_System
 
         public string Category
         {
-            get { return lblCategory.Text; }
-            set { lblCategory.Text = value; }
+            get { return label2.Text; }
+            set { label2.Text = value; }
         }
 
         public string Barcode
         {
-            get { return lblBarcode.Text; }
-            set { lblBarcode.Text = value; }
+            get { return label3.Text; }
+            set { label3.Text = value; }
         }
 
         public string Price
         {
-            get { return lblPrice.Text; }
-            set { lblPrice.Text = value; }
+            get { return label4.Text; }
+            set { label4.Text = value; }
         }
 
         public string Stock
@@ -94,15 +94,17 @@ namespace Local_Supermarket_Management_System
             set { lblQuantity.Text = value; }
         }
 
-        public string Status
-        {
-            get { return lblStatus.Text; }
-            set { lblStatus.Text = value; }
-        }
 
         private void panel7_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+        private void lblQuality_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

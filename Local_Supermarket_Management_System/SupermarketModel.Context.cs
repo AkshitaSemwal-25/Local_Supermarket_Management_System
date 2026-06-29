@@ -29,5 +29,6 @@ namespace Local_Supermarket_Management_System
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<USER> USERS { get; set; }
+        public virtual DbSet<Sale> Sales { get; set; }
     }
 }

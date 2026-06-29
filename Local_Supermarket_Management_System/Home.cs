@@ -16,7 +16,7 @@ namespace Local_Supermarket_Management_System
         public Home()
         {
             InitializeComponent();
-            LoadProducts();
+            LoadCards();
         }
 
         private void flowHome_Paint(object sender, PaintEventArgs e)
@@ -24,13 +24,15 @@ namespace Local_Supermarket_Management_System
 
         }
 
-        private void LoadProducts()
+        private void LoadCards()
         {
+            flowHome.Controls.Clear();
+
             using (var context = new LocalSupermarketsEntities())
             {
                 var products = context.Products.ToList();
 
-                foreach (var product in products)
+                foreach (Product product in products)
                 {
                     ProductCard card = new ProductCard();
 
@@ -40,14 +42,16 @@ namespace Local_Supermarket_Management_System
 
                     card.lblBarcode.Text = product.Barcode;
 
-                    card.lblPrice.Text = "£" + product.Price.ToString();
+                    card.lblPrice.Text = "£" + product.Price.ToString("0.00");
 
                     card.lblQuantity.Text = product.Quantity.ToString();
 
-                    card.lblStatus.Text =
-                        product.Quantity < 5
-                        ? "Low Stock"
-                        : "In Stock";
+                    card.lblSupplier.Text = product.Supplier.SupplierName;
+
+                    if (product.RestockDate.HasValue)
+                        card.lblRestock.Text = product.RestockDate.Value.ToShortDateString();
+                    else
+                        card.lblRestock.Text = "N/A";
 
                     flowHome.Controls.Add(card);
                 }
@@ -56,7 +60,7 @@ namespace Local_Supermarket_Management_System
 
         private void Home_Load(object sender, EventArgs e)
         {
-            LoadProducts();
+            LoadCards();
         }
     }
 }

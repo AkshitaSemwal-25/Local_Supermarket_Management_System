@@ -33,6 +33,7 @@
             // 
             // flowHome
             // 
+            this.flowHome.BackColor = System.Drawing.Color.LavenderBlush;
             this.flowHome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowHome.Location = new System.Drawing.Point(0, 0);
             this.flowHome.Name = "flowHome";

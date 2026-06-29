@@ -51,8 +51,8 @@ namespace Local_Supermarket_Management_System
         private void Mainfrom_Load(object sender, EventArgs e)
         {
             panelContainer.Controls.Clear();
-            Items item = new Items();
-            LoadControl(item);
+            Home home = new Home();
+            LoadControl(home);
         }
 
         private void btnSuppliers_Click(object sender, EventArgs e)
@@ -74,6 +74,28 @@ namespace Local_Supermarket_Management_System
             panelContainer.Controls.Clear();
             Stock stock = new Stock();
             LoadControl(stock);
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Login login = new Login();
+            login.Show();
+        }
+
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            panelContainer.Controls.Clear();
+            Sales sale = new Sales();
+            LoadControl(sale);
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            panelContainer.Controls.Clear();
+            Reports report = new Reports();
+            LoadControl(report);
+
         }
     }
 }
